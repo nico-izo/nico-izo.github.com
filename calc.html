@@ -8,6 +8,18 @@
 			#calc {
 				margin-bottom: -moz-calc(10px + 30px);
 			}
+			
+			#rules {
+				float: right;
+			}
+			
+			td {
+				width: 20px;
+				height: 20px;
+				border: 1px solid rgba(0, 0, 255, 0.2);
+				border-radius: 3px;
+			}
+			
 			td:hover, #YARR:hover { 
 				background-color: rgba(0, 0, 255, 0.2 );
 				}
@@ -75,16 +87,39 @@
 				<td>/</td>
 				<td>(</td>
 				<td>)</td>
+			</tr>
+			<tr>
 				<td>px</td>
 				<td>em</td>
+				<td>pt</td>
+				<td>pc</td>
+				<td>mm</td>
+				<td>cm</td>
+				<td>in</td>
+				<td>ex</td>
 				<td>%</td>
 				<td>.</td>
-				<td style="width:10px;"> </td>
+				<td> </td>
 			</tr>
 		</table>
 		
+		<div id="rules">
+			<b>Here you can read, how to use this CSS Calculator:</b>
+			<ul>
+				<li>Firstly, you should use spaces, because otherwise side Firefox return an error.</li>
+				<li>You can't divise by zero.</li>
+				<li>If you use + and -, you should add px (em, pt, etc.) as postfix to number.</li>
+			</ul>
+			<b>Examples of correct expressions:</b>
+			<ul>
+				<li>( 500px + 1000px ) * 1.8 / 2.5</li>
+				<li>2px * 2 * 2 * 2 + 300pt - 1mm</li>
+			</ul>
+			
+		</div>
+		
 		<form>
-			<input id="wheretocalc" type="field" value="("/>
+			<input id="wheretocalc" type="field" value="( 500px + 1000px ) * 1.8 / 2.5"/>
 		</form>
 		<div id="YARR">COMPUTE</div>
 		<div id="result">RESULT: <span id="ping"></span></div>
