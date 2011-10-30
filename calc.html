@@ -11,6 +11,7 @@
 			
 			#rules {
 				float: right;
+				margin-top: -159px;
 			}
 			
 			td {
@@ -20,10 +21,28 @@
 				border-radius: 3px;
 			}
 			
-			td:hover, #YARR:hover { 
+			td:hover { 
 				background-color: rgba(0, 0, 255, 0.2 );
 				}
-			td:active, #YARR:active { 
+				
+			#YARR {
+				text-align: center;
+				width: 150px;
+				border: 1px solid rgba(0, 0, 255, 0.3 );
+				border-radius: 5px;
+				-moz-transition: all 0.2s ease-in-out 0s;
+			}
+			
+			#YARR:hover {
+				background-color: rgba(0, 0, 255, 0.3 );
+				border: 1px solid rgba(0, 0, 255, 0.4 );
+			}
+			
+			#YARR:active { 
+				background-color: rgba(0, 0, 255, 0.5 );
+				}
+			
+			td:active { 
 				background-color: rgba(0, 0, 255, 0.5 );
 				}
 			body {
@@ -50,9 +69,10 @@
 				$("#YARR").click (
 					function (){
 						var expression = $("#wheretocalc").val();
-						expression = expression.replace("^\d*[0-9](\.\d*[0-9])?$", "$1px");
+						//expression = expression.replace("^\d*[0-9](\.\d*[0-9])?$", "$1px");
 						var text = "-moz-calc("+ expression +")";
-						alert(text);
+						//alert(text);
+						$("#expression").html(text);
 						$("#calc").css('margin-bottom', text);
 						//$("#calc").css('width', '-moz-calc((10px + 40px) * 2)')
 						$("#ping").html($("#calc").css('margin-bottom'));
@@ -104,7 +124,7 @@
 		</table>
 		
 		<div id="rules">
-			<b>Here you can read, how to use this CSS Calculator:</b>
+			<b>Here you can read how to use this CSS Calculator:</b>
 			<ul>
 				<li>Firstly, you should use spaces, because otherwise side Firefox return an error.</li>
 				<li>You can't divise by zero.</li>
@@ -129,7 +149,8 @@
 			<input id="wheretocalc" type="field" value="( 500px + 1000px ) * 1.8 / 2.5"/>
 		</form>
 		<div id="YARR">COMPUTE</div>
-		<div id="result">RESULT: <span id="ping"></span></div>
+		<div id="exp">Expression: <span id="expression"></span></div>
+		<div id="result">Result: <span id="ping"></span></div>
 		
 		<div id="calc"></div>
 	</body>
