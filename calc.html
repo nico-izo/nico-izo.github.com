@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+		<title>CSS Calc</title>
+		<style>
+			
+			#calc {
+				margin-bottom: -moz-calc(10px + 30px);
+			}
+			td:hover, #YARR:hover { 
+				background-color: rgba(0, 0, 255, 0.2 );
+				}
+			td:active, #YARR:active { 
+				background-color: rgba(0, 0, 255, 0.5 );
+				}
+			body {
+				font-size: 16pt;
+			}
+		</style>
+		
+		<script>
+			$(document).ready(function(){
+				$("td").click (
+					function (){
+						var currentInput = $("#wheretocalc").val();
+						//alert(currentInput);
+						var text = $(this).text();
+						//if(isNaN(text) && text != "") {
+						//	text = text + " ";
+						//	$("#wheretocalc").val(currentInput + "px ");
+						//}
+						currentInput = $("#wheretocalc").val();
+						$("#wheretocalc").val(currentInput+text);
+					}
+				);
+				
+				$("#YARR").click (
+					function (){
+						var expression = $("#wheretocalc").val();
+						expression = expression.replace("^\d*[0-9](\.\d*[0-9])?$", "$1px");
+						var text = "-moz-calc("+ expression +")";
+						alert(text);
+						$("#calc").css('margin-bottom', text);
+						//$("#calc").css('width', '-moz-calc((10px + 40px) * 2)')
+						$("#ping").html($("#calc").css('margin-bottom'));
+					}
+				);
+			});
+		</script>
+	</head>
+	<body>
+		
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>+</td>
+				<td>-</td>
+				<td>*</td>
+				<td>/</td>
+				<td>(</td>
+				<td>)</td>
+				<td>px</td>
+				<td>em</td>
+				<td>%</td>
+				<td>.</td>
+				<td style="width:10px;"> </td>
+			</tr>
+		</table>
+		
+		<form>
+			<input id="wheretocalc" type="field" value="("/>
+		</form>
+		<div id="YARR">COMPUTE</div>
+		<div id="result">RESULT: <span id="ping"></span></div>
+		
+		<div id="calc"></div>
+	</body>
+</html>
