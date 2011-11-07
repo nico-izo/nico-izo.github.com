@@ -1,0 +1,145 @@
+<!--
+        Без имени.html
+        
+        Copyright 2011 Nicolay <nico-izo@yandex.ru>
+        
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CSS3 ToolTips</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.20" />
+	<style>
+		.coo {
+			padding: 25px;
+			margin: 0 auto;
+			width: 800px;
+		}
+		
+		.tooltip {
+			border-bottom: 1px dotted #0077AA;
+			cursor: help;
+			color: #0077AA;
+		}
+		
+		.tooltip:hover {
+			color: #0099CC;
+		}
+		
+		.tooltip:after {
+			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-o-transition: all 0.4s ease-in-out;
+			-webkit-transition: all 0.4s ease-in-out;
+			-ms-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+			
+			content: attr(data-tooltip);
+			position: absolute;
+			background: rgba(0, 0, 0, 0.8);
+			padding: 3px 7px;
+			color: #FFF;
+			border-radius: 8px 8px 8px 0px;
+			-moz-border-radius: 8px 8px 8px 0px;
+			-webkit-border-radius: 8px 8px 8px 0px;
+			margin-top: -24px;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+			visibility: hidden;
+			opacity: 0;
+		}
+		
+		.tooltip:hover:after {
+			opacity: 1;
+			visibility: visible;
+		}
+		
+		
+		.qutim-tooltip {
+			text-decoration: none;
+			border-bottom: 1px dotted black;
+		}
+		
+		.qutim-tooltip:after {
+			content: attr(data-qutim-tooltip);
+			background-image: url("https://launchpadlibrarian.net/73530336/64.png");
+			background-repeat: no-repeat;
+			position: absolute;
+			background-color: hsla(240,100%,50%, 0.4);
+			padding: 15px;
+			color: #FFF;
+			
+		}
+		
+		.htooltip, .htooltip:visited, .tooltip:active {
+			color: #0077AA;
+		}
+		
+		.htooltip:hover {
+			color: #0099CC;
+		}
+		
+		.htooltip span {
+			margin-left: -999em;
+			position: absolute;
+			background-color: rgba(0,0,0, 0.8);
+			padding: 10px 10px 10px 40px;
+		}
+		
+		.htooltip:hover span {
+			border-radius: 15px 15px 15px 0px;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+			margin-left: 2px;
+			margin-top: -75px;
+			position: absolute;
+			width: 350px;
+			z-index: 10;
+			color: #fff;
+		}
+		
+		.htooltip:hover span img {
+			border: 0 none;
+			float: left;
+			margin: -68px 0 0 -254px;
+			position: absolute;
+			z-index: -1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="coo">
+		<p>Lorem <span class="tooltip" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare.">ipsum</span> dolor sit amet, consectetur adipiscing elit. Cras tincidunt convallis nibh sit amet semper. Nunc interdum convallis metus eget commodo. Sed eget nisl quis lorem volutpat placerat eu id arcu. Nam rutrum molestie felis, ut tincidunt ipsum dictum id. Mauris viverra tempus orci, ut consectetur lacus tempor eget. Aenean mi <span class="tooltip" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare.">justo</span>, rutrum ut porta id, ullamcorper vitae quam. Donec felis magna, eleifend ac fringilla vitae, posuere a lacus. <span class="tooltip" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare.">Nam dictum commodo pharetra.</span></p>
+
+		<p>Vestibulum tempor rutrum aliquam. 
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+		<a class="htooltip" href="http://habrahabr.ru/">qutIM<span>qutIM &mdash; Свободный многопротокольный клиент. Он портирован под множество операционных систем. <img src="https://launchpadlibrarian.net/73530336/64.png" /></span></a> in lorem vitae nisi congue suscipit. 
+		Nullam cursus nisl a arcu euismod laoreet. 
+		Quisque turpis lectus, cursus eu interdum sed, iaculis sed ligula. 
+		Sed molestie facilisis ante nec feugiat. 
+		Donec varius consequat lorem, ut ultricies magna tincidunt et. 
+		Vestibulum nisl dolor, ultrices sit amet pharetra sed, sodales quis tortor. 
+		Praesent vitae nisi metus. Sed ut dictum velit. Maecenas mi orci, dignissim in mattis et, ornare non erat. 
+		Donec adipiscing mauris eu turpis laoreet vitae fermentum felis ultrices. 
+		Nullam consequat viverra tempus. Proin vehicula accumsan odio, vitae auctor dolor tristique vitae.
+		</p>
+		
+	</div>
+</body>
+
+</html>
