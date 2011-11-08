@@ -1,31 +1,10 @@
-<!--
-        Без имени.html
-        
-        Copyright 2011 Nicolay <nico-izo@yandex.ru>
-        
-        This program is free software; you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation; either version 2 of the License, or
-        (at your option) any later version.
-        
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-        
-        You should have received a copy of the GNU General Public License
-        along with this program; if not, write to the Free Software
-        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-        MA 02110-1301, USA.
--->
-
 <!DOCTYPE html>
 <html>
 
 <head>
 	<title>CSS3 ToolTips</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 0.20" />
+	<meta name="generator" content="GlaDOS" />
 	<style>
 		.coo {
 			padding: 25px;
@@ -45,46 +24,27 @@
 		}
 		
 		.tooltip:after {
+			background: rgba(0, 0, 0, 0.8);
+			border-radius: 8px 8px 8px 0px;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+			color: #FFF;
+			content: attr(data-tooltip);
+			margin-top: -24px;
+			opacity: 0;
+			padding: 3px 7px;
+			position: absolute;
+			visibility: hidden;
+			
+			transition: all 0.4s ease-in-out;
 			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-ms-transition: all 0.4s ease-in-out;
 			-o-transition: all 0.4s ease-in-out;
 			-webkit-transition: all 0.4s ease-in-out;
-			-ms-transition: all 0.4s ease-in-out;
-			transition: all 0.4s ease-in-out;
-			
-			content: attr(data-tooltip);
-			position: absolute;
-			background: rgba(0, 0, 0, 0.8);
-			padding: 3px 7px;
-			color: #FFF;
-			border-radius: 8px 8px 8px 0px;
-			-moz-border-radius: 8px 8px 8px 0px;
-			-webkit-border-radius: 8px 8px 8px 0px;
-			margin-top: -24px;
-			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-			visibility: hidden;
-			opacity: 0;
 		}
 		
 		.tooltip:hover:after {
 			opacity: 1;
 			visibility: visible;
-		}
-		
-		
-		.qutim-tooltip {
-			text-decoration: none;
-			border-bottom: 1px dotted black;
-		}
-		
-		.qutim-tooltip:after {
-			content: attr(data-qutim-tooltip);
-			background-image: url("https://launchpadlibrarian.net/73530336/64.png");
-			background-repeat: no-repeat;
-			position: absolute;
-			background-color: hsla(240,100%,50%, 0.4);
-			padding: 15px;
-			color: #FFF;
-			
 		}
 		
 		.htooltip, .htooltip:visited, .tooltip:active {
@@ -97,20 +57,25 @@
 		}
 		
 		.htooltip span {
-			margin-left: 2px;
-			margin-top: -75px;
-			width: 350px;
-			z-index: 10;
-			opacity: 0;
-			visibility: hidden;
-			position: absolute;
 			background-color: rgba(0,0,0, 0.8);
-			padding: 10px 10px 10px 40px;
-			text-decoration: none;
-			color: #fff;
-			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 			border-radius: 15px 15px 15px 0px;
 			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+			color: #fff;
+			margin-left: 2px;
+			margin-top: -75px;
+			opacity: 0;
+			padding: 10px 10px 10px 40px;
+			position: absolute;
+			text-decoration: none;
+			visibility: hidden;
+			width: 350px;
+			z-index: 10;
+			
+			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-ms-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 		}
 		
 		.htooltip:hover span {
@@ -123,11 +88,16 @@
 			border: 0 none;
 			float: left;
 			margin: -71px 0 0 -234px;
-			position: absolute;
-			z-index: -1;
 			opacity: 0;
+			position: absolute;
 			visibility: hidden;
+			z-index: -1;
+			
 			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			-ms-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 		}
 		
 		.htooltip:hover span img {
