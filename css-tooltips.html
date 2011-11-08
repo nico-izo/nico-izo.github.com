@@ -97,30 +97,42 @@
 		}
 		
 		.htooltip span {
-			margin-left: -999em;
+			margin-left: 2px;
+			margin-top: -75px;
+			width: 350px;
+			z-index: 10;
+			opacity: 0;
+			visibility: hidden;
 			position: absolute;
 			background-color: rgba(0,0,0, 0.8);
 			padding: 10px 10px 10px 40px;
 			text-decoration: none;
+			color: #fff;
+			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+			border-radius: 15px 15px 15px 0px;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 		}
 		
 		.htooltip:hover span {
-			border-radius: 15px 15px 15px 0px;
-			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-			margin-left: 2px;
-			margin-top: -75px;
 			position: absolute;
-			width: 350px;
-			z-index: 10;
-			color: #fff;
+			opacity: 1;
+			visibility: visible;
 		}
 		
-		.htooltip:hover span img {
+		.htooltip span img {
 			border: 0 none;
 			float: left;
 			margin: -71px 0 0 -234px;
 			position: absolute;
 			z-index: -1;
+			opacity: 0;
+			visibility: hidden;
+			-moz-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+		}
+		
+		.htooltip:hover span img {
+			opacity: 1;
+			visibility: visible;
 		}
 	</style>
 </head>
