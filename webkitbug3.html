@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bug 3</title>
+		<style>
+			#elem1, #elem1:visited, #elem1:active {
+				background: #333;
+				width: 200px;
+				height: 200px;
+				color: #FFF;
+				-moz-transition: all 0.5s ease-in-out 0s;
+				-webkit-transition: all 0.5s ease-in-out 0s;
+				-o-transition: all 0.5s ease-in-out 0s;
+				-ms-transition: all 0.5s ease-in-out 0s;
+				transition: all 0.5s ease-in-out 0s;
+				margin: 0 auto;
+				margin-top: 120px;
+				-moz-user-focus: normal;
+				display: block;
+			}
+			
+			#elem1:hover {
+				background: #444;
+			}
+			
+			#elem1:focus, #elem1:-moz-focusring {
+				background-color: #555;
+			}
+			
+			#elem1::-moz-inner-focus {
+				outline: none;
+			}
+			
+			#elem1::before {
+				content: "::before";
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: #666;
+				opacity: 0.4;
+				-moz-transition: opacity 0.5s ease-in-out 0s;
+				-webkit-transition: opacity 0.5s ease-in-out 0s;
+				-o-transition: opacity 0.5s ease-in-out 0s;
+				-ms-transition: opacity 0.5s ease-in-out 0s;
+				transition: opacity 0.5s ease-in-out 0s;
+				margin-top: -100px;
+				margin-left: -100px;
+				
+				-moz-animation: 5s linear 0s normal none infinite rotating-before;
+			}
+			
+			#elem1:hover::before, #elem1:focus::before {
+				opacity: 1;
+			}
+			
+			#elem1::after {
+				height: 100px;
+				width: 100px;
+				content: "::after";
+				position: absolute;
+				margin-top: 200px;
+				margin-left: 200px;
+				background: #777;
+				opacity: 0.4;
+				-moz-transition: opacity 0.5s ease-in-out 0s;
+				-webkit-transition: opacity 0.5s ease-in-out 0s;
+				-o-transition: opacity 0.5s ease-in-out 0s;
+				-ms-transition: opacity 0.5s ease-in-out 0s;
+				transition: opacity 0.5s ease-in-out 0s;
+				-moz-animation: 5s linear 0s normal none infinite rotating-after;
+			}
+			
+			#elem1:hover::after, #elem1:focus::after{
+				opacity: 1;
+			}
+			
+			@-moz-keyframes rotating-before {
+				0% { 
+					margin-top: -100px;
+					margin-right: 0;
+					margin-left: -100px;
+					margin-bottom: 0;
+					}
+				25% {
+					margin-left: 200px;
+					margin-top: -100px;
+				}
+				50% {
+					margin-left: 200px;
+					margin-top: 200px; 
+				}
+				75% {
+					margin-left: -100px;
+					margin-top: 200px;
+				}
+				100% {
+					margin-top: -100px;
+					margin-left: -100px;
+				}
+			}
+			
+			@-moz-keyframes rotating-after {
+				0% { 
+					margin-top: 200px;
+					margin-right: 0;
+					margin-left: 200px;
+					margin-bottom: 0;
+					}
+				25% {
+					margin-left: -100px;
+					margin-top: 200px;
+				}
+				50% {
+					margin-left: -100px;
+					margin-top: -100px; 
+				}
+				75% {
+					margin-left: 200px;
+					margin-top: -100px;
+				}
+				100% {
+					margin-top: 200px;
+					margin-left: 200px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a id="elem1" href="#">
+		</a>
+	</body>
+</html>
