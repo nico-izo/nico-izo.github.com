@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>CSS3 clock</title>
+		<style type="text/css">
+			section {
+				padding: 25px;
+			}
+			
+			span {
+				position: absolute;
+				visibility: hidden;
+			}
+			
+			/*.clock::before {
+				content: "0";
+				-moz-animation: clocksec 5s infinite;
+			}*/
+			
+			.sec, .min {
+				display: inline-block;
+				padding-left: 5px;
+			}
+			
+			#test::after {
+				content: ":";
+				position: absolute;
+				margin-left: 9px;
+			}
+			
+			#test {
+				padding-right: 5px;
+			}
+			
+			#zero1 {
+				-moz-animation: clocksec0 10s infinite;
+				-webkit-animation: clocksec0 10s infinite;
+			}
+			
+			#one1 {
+				-moz-animation: clocksec0 10s infinite 1s;
+				-webkit-animation: clocksec0 10s infinite 1s;
+				visibility: hidden;
+			}
+			
+			#two1 {
+				-moz-animation: clocksec0 10s infinite 2s;
+				-webkit-animation: clocksec0 10s infinite 2s;
+			}
+			
+			#three1 {
+				-moz-animation: clocksec0 10s infinite 3s;
+				-webkit-animation: clocksec0 10s infinite 3s;
+			}
+			
+			#four1 {
+				-moz-animation: clocksec0 10s infinite 4s;
+				-webkit-animation: clocksec0 10s infinite 4s;
+			}
+			
+			#five1 {
+				-moz-animation: clocksec0 10s infinite 5s;
+				-webkit-animation: clocksec0 10s infinite 5s;
+			}
+			
+			#six1 {
+				-moz-animation: clocksec0 10s infinite 6s;
+				-webkit-animation: clocksec0 10s infinite 6s;
+			}
+			
+			#seven1 {
+				-moz-animation: clocksec0 10s infinite 7s;
+				-webkit-animation: clocksec0 10s infinite 7s;
+			}
+			
+			#eight1 {
+				-moz-animation: clocksec0 10s infinite 8s;
+				-webkit-animation: clocksec0 10s infinite 8s;
+			}
+			#nine1 {
+				-moz-animation: clocksec0 10s infinite 9s;
+				-webkit-animation: clocksec0 10s infinite 9s;
+			}
+			
+			
+			
+			@-moz-keyframes clocksec0 {
+				0% {
+					visibility: visible;
+				}
+				
+				10% {
+					visibility: hidden;
+				}
+				
+				20% {
+					visibility: hidden;
+				}
+				
+				100% {
+					visibility: hidden;
+				}
+			}
+			
+			@-webkit-keyframes clocksec0 {
+				0% {
+					visibility: visible;
+				}
+				
+				10% {
+					visibility: hidden;
+				}
+				
+				20% {
+					visibility: hidden;
+				}
+				
+				100% {
+					visibility: hidden;
+				}
+			}
+			
+			@-moz-keyframes clocksec1 {
+				0% {
+					visibility: visible;
+				}
+				
+				17% { visibility: hidden; }
+				20% {
+					visibility: hidden;
+				}
+				
+				40% {
+					visibility: hidden;
+				}
+				
+				100% {
+					visibility: hidden;
+				}
+			}
+			
+			@-webkit-keyframes clocksec1 {
+				0% {
+					visibility: visible;
+				}
+				
+				17% { visibility: hidden; }
+				20% {
+					visibility: hidden;
+				}
+				
+				40% {
+					visibility: hidden;
+				}
+				
+				100% {
+					visibility: hidden;
+				}
+			}
+			
+			
+			#zero2 {
+				-moz-animation: clocksec1 60s infinite;
+				-webkit-animation: clocksec1 60s infinite;
+			}
+			
+			#one2 {
+				-moz-animation: clocksec1 60s infinite 10s;
+				-webkit-animation: clocksec1 60s infinite 10s;
+				visibility: hidden;
+			}
+			
+			#two2 {
+				-moz-animation: clocksec1 60s infinite 20s;
+				-webkit-animation: clocksec1 60s infinite 20s;
+			}
+			
+			#three2 {
+				-moz-animation: clocksec1 60s infinite 30s;
+				-webkit-animation: clocksec1 60s infinite 30s;
+			}
+			
+			#four2 {
+				-moz-animation: clocksec1 60s infinite 40s;
+				-webkit-animation: clocksec1 60s infinite 40s;
+			}
+			
+			#five2 {
+				-moz-animation: clocksec1 60s infinite 50s;
+				-webkit-animation: clocksec1 60s infinite 50s;
+			}
+			
+			#six2 {
+				-moz-animation: clocksec1 60s infinite 60s;
+				-webkit-animation: clocksec1 60s infinite 60s;
+			}
+			
+			#seven2 {
+				-moz-animation: clocksec1 10s infinite 7s;
+			}
+			
+			#eight2 {
+				-moz-animation: clocksec1 10s infinite 8s;
+			}
+			#nine2 {
+				-moz-animation: clocksec0 10s infinite 9s;
+			}
+			
+			
+			
+			/* Что за ц я делаю */ 
+			
+			#zero4 {
+				-moz-animation: clocksec0 600s infinite;
+				-webkit-animation: clocksec0 600s infinite;
+			}
+			
+			#one4 {
+				-moz-animation: clocksec0 600s infinite 60s;
+				-webkit-animation: clocksec0 600s infinite 60s;
+			}
+			
+			#two4 {
+				-moz-animation: clocksec0 600s infinite 120s;
+				-webkit-animation: clocksec0 600s infinite 120s;
+			}
+			
+			#three4 {
+				-moz-animation: clocksec0 600s infinite 180s;
+				-webkit-animation: clocksec0 600s infinite 180s;
+			}
+			
+			#four4 {
+				-moz-animation: clocksec0 600s infinite 240s;
+				-webkit-animation: clocksec0 600s infinite 240s;
+			}
+			
+			#five4 {
+				-moz-animation: clocksec0 600s infinite 300s;
+				-webkit-animation: clocksec0 600s infinite 300s;
+			}
+			
+			#six4 {
+				-moz-animation: clocksec0 600s infinite 360s;
+				-webkit-animation: clocksec0 600s infinite 360s;
+			}
+			
+			#seven4 {
+				-moz-animation: clocksec0 600s infinite 420s;
+				-webkit-animation: clocksec0 600s infinite 420s;
+			}
+			
+			#eight4 {
+				-moz-animation: clocksec0 600s infinite 480s;
+				-webkit-animation: clocksec0 600s infinite 480s;
+			}
+			#nine4 {
+				-moz-animation: clocksec0 600s infinite 540s;
+				-webkit-animation: clocksec0 600s infinite 540s;
+			}
+			
+			/* Ну ц... */
+			
+			#zero3 {
+				-moz-animation: clocksec1 3600s infinite;
+				-webkit-animation: clocksec1 3600s infinite;
+			}
+			
+			#one3 {
+				-moz-animation: clocksec1 3600s infinite 600s;
+				-webkit-animation: clocksec1 3600s infinite 600s;
+				visibility: hidden;
+			}
+			
+			#two3 {
+				-moz-animation: clocksec1 3600s infinite 1200s;
+				-webkit-animation: clocksec1 3600s infinite 1200s;
+			}
+			
+			#three3 {
+				-moz-animation: clocksec1 3600s infinite 1800s;
+				-webkit-animation: clocksec1 3600s infinite 1800s;
+			}
+			
+			#four3 {
+				-moz-animation: clocksec1 3600s infinite 2400s;
+				-webkit-animation: clocksec1 3600s infinite 2400s;
+			}
+			
+			#five3 {
+				-moz-animation: clocksec1 3600s infinite 3000s;
+				-webkit-animation: clocksec1 3600s infinite 3000s;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<section>
+
+			<div class="min">
+				<span id="zero3">0</span>
+				<span id="one3">1</span>
+				<span id="two3">2</span>
+				<span id="three3">3</span>
+				<span id="four3">4</span>
+
+				<span id="five3">5</span>
+			</div>
+			<div class="min" id="test">
+				<span id="zero4">0</span>
+				<span id="one4">1</span>
+				<span id="two4">2</span>
+				<span id="three4">3</span>
+
+				<span id="four4">4</span>
+				<span id="five4">5</span>
+				<span id="six4">6</span>
+				<span id="seven4">7</span>
+				<span id="eight4">8</span>
+				<span id="nine4">9</span>
+
+			</div>
+			
+			
+			<div class="sec">
+				<span id="zero2">0</span>
+				<span id="one2">1</span>
+				<span id="two2">2</span>
+				<span id="three2">3</span>
+				<span id="four2">4</span>
+
+				<span id="five2">5</span>
+			</div>
+			<div class="sec">
+				<span id="zero1">0</span>
+				<span id="one1">1</span>
+				<span id="two1">2</span>
+				<span id="three1">3</span>
+
+				<span id="four1">4</span>
+				<span id="five1">5</span>
+				<span id="six1">6</span>
+				<span id="seven1">7</span>
+				<span id="eight1">8</span>
+				<span id="nine1">9</span>
+
+			</div>
+		</section>
+	</body>
+</html>
+
