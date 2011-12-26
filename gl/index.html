@@ -1,0 +1,207 @@
+<!--
+        index.html
+        
+        Copyright 2011 Nicolay Izoderov <nico-izo@yandex.ru>
+        
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Gallery</title>
+	<meta name="generator" content="GlaDOS" />
+	<style type="text/css">
+		
+		body {
+			counter-reset: photos;
+		}
+		
+		a, a:focus, a:active, a:visited, a:link, a:hover {
+			text-decoration: none;
+			outline: none;
+			border: 0;
+		}
+		
+		#openGallery {
+			color: rgba(0, 0, 0, 0.5);
+			display: inline-block;
+			border: 1px solid rgba(0, 0, 0, 0.4);
+			padding: 10px;
+			border-radius: 10px;
+			-moz-transition: all 0.4s ease-in-out;
+			-ms-transition: all 0.4s ease-in-out;
+			-o-transition: all 0.4s ease-in-out;
+			-webkit-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+		}
+		
+		#openGallery:hover {
+			color: rgba(0, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		
+		a::-moz-selection {
+			border: 0;
+			outline: 0;
+		}
+		
+		.opacityblur {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			background-color: rgba(0,0,0,0.8);
+			-moz-transition: background-color 0.4s ease-in-out;
+			
+			visibility: hidden;
+		}
+		
+		#gl {
+			position: absolute;
+			top: -999em;
+		}
+		/* Obsolete
+		#gl:checked + .opacityblur {
+			visibility: visible;
+		}
+		
+		#gl:checked + .opacityblur .photo:first-of-type {
+			visibility: visible;
+		}
+		*/
+		.photo {
+			visibility: hidden;
+			z-index: 100000;
+		}
+		
+		.photo:target {
+			visibility: visible;
+			z-index: 1001;
+		}
+		
+		.photo:target > .opacityblur {
+			visibility: visible;
+		}
+		
+		.photo:not(:target){
+			display: none;
+		}
+		
+		.block {
+			padding: 25px;
+			margin-top: 30px;
+			background-color: #fff;
+			border-radius: 10px;
+			margin: 0 auto;
+			box-shadow: 0 0 25px rgba(0,0,0,0.5);
+			width: auto;
+			height: auto;
+		}
+		
+		#first > .block {
+			width: 450px;
+			height: 500px;
+		}
+		
+		#second > .block {
+			width: 820px;
+			height: 550px;
+		}
+		
+		#third > .block {
+			width: 870px;
+			height: 740px;
+		}
+		
+		.left {
+			position: absolute;
+			color: rgba(255,255,255,0.1);
+			width: 50%;
+			height: auto;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			text-align: left;
+			padding-top: 50px;
+			text-decoration: none;
+			padding-left: 10px;
+			font-size: 200px;
+		}
+		
+		.left:hover, .right:hover {
+			color: rgba(255,255,255,0.5);
+		}
+		
+		.right {
+			position: absolute;
+			color: rgba(255,255,255,0.1);
+			width: 50%;
+			height: auto;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			text-align: right;
+			padding-top: 50px;
+			text-decoration: none;
+			padding-left: 10px;
+			font-size: 200px;
+		}
+		
+		.exit {
+			display: block;
+			position: absolute;
+			top: 0;
+			height: 20px;
+			z-index: 10000;
+			width: 400px;
+			margin-left: 200px;
+		}
+		
+	</style>
+</head>
+<body>
+	<a href="#first" id="openGallery">Open</a><!--<label for="gl">Open Gallery</label>-->
+	<input id="gl" type="checkbox"/>
+	
+	<div class="photo" id="first">
+		<div class="opacityblur"></div>
+		<a class="left" href="#third">&larr;</a>
+		<div class="block"><img src="./qutim.png" /></div>
+		<a class="right" href="#second">&rarr;</a>
+	</div>
+	
+	<div class="photo" id="second">
+		<div class="opacityblur"></div>
+		<a class="left" href="#first">&larr;</a>
+		<div class="block"><img src="./lol.jpeg" /></div>
+		<a class="right" href="#third">&rarr;</a>
+	</div>
+	
+	<div class="photo" id="third">
+		<div class="opacityblur"></div>
+		<a class="left" href="#second">&larr;</a>
+		<div class="block"><img src="http://cs10903.vkontakte.ru/u8919950/-14/z_dc0e80be.jpg" height="700"/></div>
+		<a class="right" href="#first">&rarr;</a>
+	</div>
+	
+	<a class="exit" href="#x"></a>
+</body>
+</html>
