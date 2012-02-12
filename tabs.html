@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title>CSS3 tabs without :target</title>
+		<style>
+			input {
+				position: absolute;
+				top: -999px;
+			}
+			
+			input:checked + label {
+				background: none repeat scroll 0 0 #CCC;
+				bottom: -1px;
+				margin-bottom: 0;
+				z-index: 1;
+			}
+			
+			input:checked + label + input + label + input + label + input + label + article {
+				display: block;
+			}
+			
+			input:checked + label + input + label + input + label + article + article {
+				display: block;
+			}
+			
+			input:checked + label + input + label + article + article + article {
+				display: block;
+			}
+			
+			input:checked + label + article + article + article + article {
+				display: block;
+			}
+			
+			article {
+				display: none;
+				width: 800px;
+				background: #CCC;
+				border: 1px solid #999;
+				position: relative;
+			}
+			
+			label {
+				border-radius: 3px 3px 0 0;
+				border: 1px solid #999;
+				border-bottom: 0;
+				padding: 3px;
+				display: inline-block;
+				position: relative;
+				bottom: -5px;
+				cursor: pointer;
+			}
+			
+			label:hover {
+				background: #EEE;
+				bottom: -1px;
+			}
+			
+			label:active {
+				background: #DDD;
+			}
+			
+			section {
+				position: relative;
+				-webkit-animation: 0.1s hack infinite;
+			}
+			
+			@-webkit-keyframes hack {
+				from {margin: 0; padding: 0;}
+				to {margin: 0; padding: 0;}
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<input type="radio" id="tab1" name="radiobutton" checked="checked"/>
+			<label for="tab1" class="tabs">qutIM 0.1</label>
+			<input type="radio" id="tab2" name="radiobutton"/>
+			<label for="tab2" class="tabs">qutIM 0.2</label>
+			<input type="radio" id="tab3" name="radiobutton" />
+			<label for="tab3" class="tabs">qutIM 0.3</label>
+			<input type="radio" id="tab4" name="radiobutton"/>
+			<label for="tab4" class="tabs">qutIM 0.4</label>
+			<article class="contenttab">
+				qutIM 0.1 &mdash; Однопротокольный клиент, вышедший в 2008 году.
+			</article>
+			<article class="contenttab">
+				qutIM 0.2 &mdash; Многопротокольный клиент, вышедший в 2010(?) году.
+			</article>
+			<article class="contenttab">
+				qutIM 0.3 &mdash; Версия, находящаяся в разработке. Никто не знает, когда он выйдет, но все о нём говорят. Включает в себя огромнейший список исправлений и доработок, а так же несёт на себе печать невнимания, ибо нехватка разработчиков компенсируется переизбытком багов.
+			</article>
+			<article class="contenttab">
+				qutIM 0.4 &mdash; Миф. В этом мифе появится поддержка VoIP, P2P и много всякой херни, которую из-за лени не всунут в 0.3.
+			</article>
+		</section>
+	</body>
+</html>
