@@ -19,20 +19,20 @@
 				display: block;
 				outline: 0;
 			}
-			
+
 			#elem1:hover {
 				background: #444;
 			}
-			
+
 			#elem1:focus, #elem1:-moz-focusring {
 				background-color: #555;
 			}
-			
+
 			#elem1::-moz-focus-inner {
 				outline: none;
 				border: 0;
 			}
-			
+
 			#elem1::before {
 				content: "::before";
 				width: 100px;
@@ -47,18 +47,18 @@
 				transition: opacity 0.5s ease-in-out 0s;
 				margin-top: -100px;
 				margin-left: -100px;
-				
+
 				-moz-animation: 5s linear 0s normal none infinite rotating-before;
 			}
-			
+
 			#elem1:hover::before, #elem1:focus::before {
 				opacity: 1;
 			}
-			
+
 			#elem1:focus::before, #elem1:hover:focus::before {
 				-moz-animation: 5s linear 0s normal none infinite rotating-before, 5s linear 0s normal none infinite focused-before;
 			}
-			
+
 			#elem1::after {
 				height: 100px;
 				width: 100px;
@@ -75,21 +75,21 @@
 				transition: opacity 0.5s ease-in-out 0s;
 				-moz-animation: 5s linear 0s normal none infinite rotating-after;
 			}
-			
+
 			#elem1:hover::after, #elem1:focus::after{
 				opacity: 1;
 			}
-			
+
 			#elem1:focus::after, #elem1:hover:focus::after {
 				-moz-animation: 5s linear 0s normal none infinite rotating-after, 5s linear 0s normal none infinite focused-before;
 			}
-			
+
 			#elem1:hover:focus {
 				-moz-animation: 5s linear 0s normal none infinite animatedbox;
 			}
-			
+
 			@-moz-keyframes rotating-before {
-				0% { 
+				0% {
 					margin-top: -100px;
 					margin-right: 0;
 					margin-left: -100px;
@@ -101,7 +101,7 @@
 				}
 				50% {
 					margin-left: 200px;
-					margin-top: 200px; 
+					margin-top: 200px;
 				}
 				75% {
 					margin-left: -100px;
@@ -112,9 +112,9 @@
 					margin-left: -100px;
 				}
 			}
-			
+
 			@-moz-keyframes rotating-after {
-				0% { 
+				0% {
 					margin-top: 200px;
 					margin-right: 0;
 					margin-left: 200px;
@@ -126,7 +126,7 @@
 				}
 				50% {
 					margin-left: -100px;
-					margin-top: -100px; 
+					margin-top: -100px;
 				}
 				75% {
 					margin-left: 200px;
@@ -137,11 +137,11 @@
 					margin-left: 200px;
 				}
 			}
-			
+
 			/* v2 */
-			
+
 			@-moz-keyframes focused-before {
-				0% { 
+				0% {
 					background: red;
 					}
 				25% {
@@ -157,16 +157,16 @@
 					background: red;
 				}
 			}
-			
+
 			@-moz-keyframes animatedbox {
 				0% {
-					box-shadow: 0 0 125px 0 #046DC9; 
+					box-shadow: 0 0 125px 0 #046DC9;
 					}
 				60% {
-					box-shadow: 0 0 125px 50px #046DC9; 
+					box-shadow: 0 0 125px 50px #046DC9;
 				}
 				100% {
-					box-shadow: 0 0 125px 0 #046DC9; 
+					box-shadow: 0 0 125px 0 #046DC9;
 				}
 			}
 		</style>

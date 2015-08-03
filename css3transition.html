@@ -10,49 +10,49 @@
 			height: 20px;
 			border: 1px solid black;
 			background: rgba(0,0,0,0.1);
-			-moz-transition: all 0.5s ease 0s; 
-			-webkit-transition: all 0.5s ease 0s; 
-			-ms-transition: all 0.5s ease 0s; 
-			-o-transition: all 0.5s ease 0s; 
-			transition: all 0.5s ease 0s; 
+			-moz-transition: all 0.5s ease 0s;
+			-webkit-transition: all 0.5s ease 0s;
+			-ms-transition: all 0.5s ease 0s;
+			-o-transition: all 0.5s ease 0s;
+			transition: all 0.5s ease 0s;
 			display: block;
 			color: #000;
 			outline: 0;
-			
+
 		}
 		#menu::-moz-focus-inner {
 				outline: none;
 				border: 0;
 		}
-		
+
 		#menu:active {
 			background: rgba(0,0,0,0.2);
 		}
-		
+
 		#menu:focus {
 			background: rgba(0,0,0,0.3);
 		}
-		
+
 		#menu ul {
 			opacity: 0;
 			visibility: hidden;
-			-moz-transition: all 0.5s ease 0s; 
-			-webkit-transition: all 0.5s ease 0s; 
-			-o-transition: all 0.5s ease 0s; 
-			-ms-transition: all 0.5s ease 0s; 
-			transition: all 0.5s ease 0s; 
+			-moz-transition: all 0.5s ease 0s;
+			-webkit-transition: all 0.5s ease 0s;
+			-o-transition: all 0.5s ease 0s;
+			-ms-transition: all 0.5s ease 0s;
+			transition: all 0.5s ease 0s;
 		}
-		
+
 		#menu:focus:not(:active) ul {
 			opacity: 1;
 			visibility: visible;
-			-moz-transition: all 0.5s ease 1s; 
-			-webkit-transition: all 0.5s ease 1s; 
-			-ms-transition: all 0.5s ease 1s; 
-			-o-transition: all 0.5s ease 1s; 
-			transition: all 0.5s ease 1s; 
+			-moz-transition: all 0.5s ease 1s;
+			-webkit-transition: all 0.5s ease 1s;
+			-ms-transition: all 0.5s ease 1s;
+			-o-transition: all 0.5s ease 1s;
+			transition: all 0.5s ease 1s;
 		}
-				
+
 		#menu::after {
 			content: attr(data-tooltip);
 			opacity: 0;
@@ -61,27 +61,27 @@
 			background: rgba(0,0,0,0.8);
 			border-radius: 5px;
 			position: absolute;
-			-moz-transition: all 0.5s ease 0s; 
-			-webkit-transition: all 0.5s ease 0s; 
-			-ms-transition: all 0.5s ease 0s; 
-			-o-transition: all 0.5s ease 0s; 
-			transition: all 0.5s ease 0s; 
+			-moz-transition: all 0.5s ease 0s;
+			-webkit-transition: all 0.5s ease 0s;
+			-ms-transition: all 0.5s ease 0s;
+			-o-transition: all 0.5s ease 0s;
+			transition: all 0.5s ease 0s;
 			top: 5px;
 			left: 20em;
 			color: #fff;
 			visibility: hidden;
 		}
-		
+
 		#menu:active::after {
 			visibility: visible;
 			opacity: 1;
-			-moz-transition: all 0.5s ease 2s; 
-			-webkit-transition: all 0.5s ease 2s; 
-			-ms-transition: all 0.5s ease 2s; 
-			-o-transition: all 0.5s ease 2s; 
-			transition: all 0.5s ease 2s; 
+			-moz-transition: all 0.5s ease 2s;
+			-webkit-transition: all 0.5s ease 2s;
+			-ms-transition: all 0.5s ease 2s;
+			-o-transition: all 0.5s ease 2s;
+			transition: all 0.5s ease 2s;
 		}
-		
+
 	</style>
 </head>
 <body>

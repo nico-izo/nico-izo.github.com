@@ -4,27 +4,27 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
 		<title>CSS Calc</title>
 		<style>
-			
+
 			#calc {
 				margin-bottom: -moz-calc(10px + 30px);
 			}
-			
+
 			#rules {
 				float: right;
 				margin-top: -159px;
 			}
-			
+
 			td {
 				width: 20px;
 				height: 20px;
 				border: 1px solid rgba(0, 0, 255, 0.2);
 				border-radius: 3px;
 			}
-			
-			td:hover { 
+
+			td:hover {
 				background-color: rgba(0, 0, 255, 0.2 );
 				}
-				
+
 			#YARR {
 				text-align: center;
 				width: 150px;
@@ -32,24 +32,24 @@
 				border-radius: 5px;
 				-moz-transition: all 0.2s ease-in-out 0s;
 			}
-			
+
 			#YARR:hover {
 				background-color: rgba(0, 0, 255, 0.3 );
 				border: 1px solid rgba(0, 0, 255, 0.4 );
 			}
-			
-			#YARR:active { 
+
+			#YARR:active {
 				background-color: rgba(0, 0, 255, 0.5 );
 				}
-			
-			td:active { 
+
+			td:active {
 				background-color: rgba(0, 0, 255, 0.5 );
 				}
 			body {
 				font-size: 16pt;
 			}
 		</style>
-		
+
 		<script>
 			$(document).ready(function(){
 				$("td").click (
@@ -65,7 +65,7 @@
 						$("#wheretocalc").val(currentInput+text);
 					}
 				);
-				
+
 				$("#YARR").click (
 					function (){
 						var expression = $("#wheretocalc").val();
@@ -82,7 +82,7 @@
 		</script>
 	</head>
 	<body>
-		
+
 		<table>
 			<tr>
 				<td>1</td>
@@ -122,7 +122,7 @@
 				<td> </td>
 			</tr>
 		</table>
-		
+
 		<div id="rules">
 			<b>Here you can read how to use this CSS Calculator:</b>
 			<ul>
@@ -141,19 +141,19 @@
 				<li>90 + 100</li>
 				<li>1000 px +100 px</li>
 			</ul>
-			
-			
+
+
 		</div>
-		
+
 		<form>
 			<input id="wheretocalc" type="field" value="((1ex * 2) + 10pt - 1mm) / 3"/>
 		</form>
 		<div id="YARR">COMPUTE</div>
 		<div id="exp">Expression: <span id="expression"></span></div>
 		<div id="result">Result: <span id="ping"></span></div>
-		
+
 		<div id="calc"></div>
-		
+
 		<!-- Yandex.Metrika counter -->
 <div style="display:none;"><script type="text/javascript">
 (function(w, c) {
