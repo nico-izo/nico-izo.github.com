@@ -70,7 +70,7 @@
 					function (){
 						var expression = $("#wheretocalc").val();
 						//expression = expression.replace("^\d*[0-9](\.\d*[0-9])?$", "$1px");
-						var text = "-moz-calc("+ expression +")";
+						var text = "calc("+ expression +")";
 						//alert(text);
 						$("#expression").html(text);
 						$("#calc").css('margin-bottom', text);
